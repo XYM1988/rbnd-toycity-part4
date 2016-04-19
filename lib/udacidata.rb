@@ -135,9 +135,9 @@ class Udacidata
     data = CSV.read(@@TOYDATABASE)
     
     # Extract saved information from the dictionary we passed in
-    @name = attributes[:name]
-    @brand = attributes[:brand]
-    @price = attributes[:price]
+    @name = attributes[:name] ? attributes[:name] : @name
+    @brand = attributes[:brand] ? attributes[:brand] : @brand
+    @price = attributes[:price] ? attributes[:price] : @price
 
     # Construct an array for further csv written convenience 
     data.each do |instance|
